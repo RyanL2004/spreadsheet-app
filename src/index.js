@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import SpreadsheetApp from '../SpreadsheetApp';
 import reportWebVitals from './reportWebVitals';
+import SpreadsheetApp from '../SpreadsheetApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <SpreadsheetApp />
   </React.StrictMode>
 );
 
