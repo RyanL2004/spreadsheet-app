@@ -6,6 +6,7 @@ const infixToFunction = {
 }
 
 const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator](parseFloat(arg1), parseFloat(arg2)));
+
 const highPrecedence = str => {
   const regex = /([\d.]+)([*\/])([\d.]+)/;
   const str2 = infixEval(str, regex);
@@ -15,16 +16,18 @@ const highPrecedence = str => {
 const isEven = num => num % 2 === 0;
 const sum = nums => nums.reduce((acc, el) => acc + el, 0);
 const average = nums => sum(nums) / nums.length;
+
 const median = nums => {
   const sorted = nums.slice().sort((a, b) => a - b);
   const length = sorted.length;
   const middle = length / 2 - 1;
-  return isEven(length)? average([sorted[middle], sorted[middle + 1]]) : sorted[Math.ceil(middle)];
+  return isEven(length)
+    ? average([sorted[middle], sorted[middle + 1]])
+    : sorted[Math.ceil(middle)];
 }
-const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
-const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map(code => String.fromCharCode(code));
 
 const spreadsheetFunctions = {
+  
   sum,
   average,
   median,
@@ -39,7 +42,9 @@ const spreadsheetFunctions = {
   range: nums => range(...nums),
   nodupes: nums => [...new Set(nums).values()],
   "": nums => nums,
+
 }
+
 const applyFunction = str => {
   const noHigh = highPrecedence(str);
   const infix = /([\d.]+)([+-])([\d.]+)/;
@@ -50,7 +55,8 @@ const applyFunction = str => {
   return str2.replace(functionCall, (match, fn, args) => spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? apply(fn, args) : match);
 }
 
-
+const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
+const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map(code => String.fromCharCode(code));
 
 const evalFormula = (x, cells) => {
   const idToText = id => cells.find(cell => cell.id === id).value;
@@ -64,6 +70,7 @@ const evalFormula = (x, cells) => {
   const functionExpanded = applyFunction(cellExpanded);
   return functionExpanded === x ? functionExpanded : evalFormula(functionExpanded, cells);
 }
+
 window.onload = () => {
   const container = document.getElementById("container");
   const createLabel = (name) => {
@@ -86,6 +93,7 @@ window.onload = () => {
     })
   })
 }
+
 const update = event => {
   const element = event.target;
   const value = element.value.replace(/\s/g, "");
