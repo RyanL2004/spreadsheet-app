@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/spreadsheet-app/static/css/main.e6c13ad2.css",
+    "main.js": "/spreadsheet-app/static/js/main.32fdf0b4.js",
+    "index.html": "/spreadsheet-app/index.html",
+    "main.e6c13ad2.css.map": "/spreadsheet-app/static/css/main.e6c13ad2.css.map",
+    "main.32fdf0b4.js.map": "/spreadsheet-app/static/js/main.32fdf0b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.32fdf0b4.js"
+  ]
+}
