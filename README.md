@@ -1,3 +1,48 @@
+# Spreadsheet App
+
+A **spreadsheet application** built using **functional programming principles**. This project was inspired by my personal need to organize and manage job applications more effectively. By developing a spreadsheet from scratch, I created a tool that meets my needs while honing my programming skills.
+
+---
+
+## Features
+
+- **Custom Spreadsheet Logic**: Designed and implemented core spreadsheet functionalities, such as:
+  - Basic arithmetic operations (`+`, `-`, `*`, `/`)
+  - Functions like `SUM`, `AVERAGE`, `MEDIAN`, and more
+  - Range operations and duplicate removal
+- **Dynamic Cell Updates**: Automatic recalculation of dependent cells when values are updated.
+- **Extensibility**: Easily extendable to support more functions and features.
+- **Functional Programming**: Core logic written in a clean, declarative style for maintainability and scalability.
+
+---
+
+## Motivation
+
+While applying for jobs, I often found it challenging to track the status of multiple applications and manage deadlines. Traditional tools like Excel and Google Sheets were effective but lacked the personal touch I wanted. Developing this project allowed me to:
+- Customize a tool for my exact needs.
+- Explore functional programming techniques in JavaScript.
+- Build something practical and reusable for other scenarios.
+
+---
+
+## Tech Stack
+
+- **React**: Used to render the application and handle DOM interactions.
+- **JavaScript (ES6)**: Core spreadsheet logic written with functional programming principles.
+- **HTML & CSS**: For the application structure and styling.
+- **GitHub Pages**: Hosting the live version of the app.
+
+---
+
+## Installation and Setup
+
+To run the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RyanL2004/spreadsheet-app.git
+   cd spreadsheet-app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
